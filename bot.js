@@ -1,8 +1,3 @@
-// war-login.js
-// Bot "war tiket" patuh aturan: login via terminal, simpan sesi cookie otomatis,
-// auto-pick event, tunggu reservation_start_date (WIB), lalu tembak burst + retry.
-// Gunakan hanya jika kamu punya izin & mematuhi ToS penyelenggara.
-
 import axios from "axios";
 import readline from "readline";
 import tough from "tough-cookie";
