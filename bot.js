@@ -8,17 +8,17 @@ import { wrapper } from "axios-cookiejar-support";
 const BASE = "http://103.118.82.91";
 const LOGIN_PAGE = "/login"; // untuk fetch CSRF (jika ada)
 const LOGIN_ENDPOINT = "/login"; // endpoint POST login
-const LIST_ENDPOINT = "/alumni/presuniv_events";
+const LIST_ENDPOINT = "/student/event_war";
 
 // Kemungkinan endpoint booking - akan dicoba satu per satu
 const POSSIBLE_BOOK_ENDPOINTS = [
-  "/alumni/presuniv_events/book",
-  "/alumni/presuniv_events/register",
-  "/alumni/presuniv_events/reservation",
-  "/alumni/book",
+  "/student/event_war/book",
+  "/student/event_war/register",
+  "/student/event_war/reservation",
+  "/student/book",
   "/book",
   "/register",
-  "/alumni/presuniv_events", // fallback ke endpoint list
+  "/student/event_war", // fallback ke endpoint list
 ];
 
 const BOOK_ENDPOINT = null; // akan diisi otomatis setelah menemukan yang benar
@@ -232,11 +232,11 @@ async function waitForTargetEvent() {
       }
 
       console.log(
-        `❌ Event PREUNI tidak tersedia saat ini. Coba lagi dalam 30 detik...`
+        `❌ Event PREUNI tidak tersedia saat ini. Coba lagi dalam 10 detik...`
       );
       await sleep(10000); // Tunggu 30 detik sebelum coba lagi
     } catch (err) {
-      console.error(`[ERROR] ${err.message}. Retry dalam 60 detik...`);
+      console.error(`[ERROR] ${err.message}. Retry dalam 20 detik...`);
       await sleep(20000); // Tunggu lebih lama jika ada error
     }
   }
