@@ -13,18 +13,14 @@ const LIST_ENDPOINT = "/student/event_war";
 // Kemungkinan endpoint booking - akan dicoba satu per satu
 const POSSIBLE_BOOK_ENDPOINTS = [
   "/student/event_war/book",
-  "/student/event_war/register",
   "/student/event_war/reservation",
-  "/student/book",
-  "/book",
-  "/register",
   "/student/event_war", // fallback ke endpoint list
 ];
 
 const BOOK_ENDPOINT = null; // akan diisi otomatis setelah menemukan yang benar
 
 // Prioritas event: cocok keyword dulu; kalau kosong, pilih yang paling dekat start reservasinya
-const NAME_KEYWORDS = ["PREUNI"]; // Mencari event yang mengandung kata "PREUNI"
+const NAME_KEYWORDS = ["PREUNI Final Night Fast Track"]; // Mencari event yang mengandung kata "PREUNI"
 
 // Mode payload booking: "json" atau "form"
 const BOOK_PAYLOAD_MODE = "json";
